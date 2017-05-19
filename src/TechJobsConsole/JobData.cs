@@ -150,9 +150,9 @@ namespace TechJobsConsole
             {
                 foreach(KeyValuePair<string,string> entry in row)
                 {
-                    string cell = entry.Value;
+                    string capValue = entry.Value.ToUpper();
 
-                    if (string.Equals(cell, value, StringComparison.OrdinalIgnoreCase) && !jobs.Contains(row))
+                    if (capValue.Contains(value.ToUpper()) && !jobs.Contains(row))
                     {
                         jobs.Add(row);
                     }
